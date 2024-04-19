@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compartible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News Website</title>
+<style>
+body{margin:0;padding:0;}
+
+.header{height:100vh;width:100%;background-image:linear-gradient(rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(h1.jpg);background-position:center;background-size:cover;
+text-align:left;color:#fff;}
+
+nav{background-color:rgba(0,0,0,0.5);overflow:hidden;}
+nav a{float:right;display:block;color:white;text-align:center;padding:15px 20px;text-decoration:none;}
+a.active,nav a:hover{background-color:#ff7200;color:black;}
+
+
+.content{margin-left:5%;font-family:'arial';line-height:1;}
+.content h1{font-size:90px;color:white;}
+.content span{color:#33ccff;font-size:60px;}
+
+.hero-btn{margin-left:0%;color:black;text-decoration:none;border-radius:5px;padding:10px 20px;background-color:#ff7200;
+transition:background-color 0.3s ease;box-shadow:0 0 5px yellow,0 0 25px yellow;}
+.hero-btn:hover{background-color:white;box-shadow:0 0 5px yellow,0 0 25px yellow,0 0 50px yellow;}
+
+
+.header3{background-image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(n10.jpg);background-size:cover;background-position:center;width:100%;}
+.heading3{display:flex;justify-content:space-between;padding:30px;margin:0 auto;}
+.heading3 img{height:500px;border-radius:50px;width:50%;}
+.heading3 h1{color:#33ccff;font-size:300%;}
+.heading3 p{color:white;font-size:150%;padding:15px;font-family:'arial';}
+
+
+.postcard {width:400px;margin:20px;padding:30px;padding:30px;border:2px solid #ccc;border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);float: left;}
+.postcard img { width: 100%;border-radius: 10px;}
+
+.zoom-link {display: inline-block;overflow: hidden;}
+   /* Style for the image */
+.zoom-link img {transition: transform 0.3s ease;} /* Add transition for smooth effect */
+  /* Hover effect - Zoom in */
+.zoom-link:hover img {transform: scale(1.1);}/* Scale the image up by 10% */
+
+.campus-updates h1{font-size:300%;text-indent:500px;color:#ff7200;}
+
+.course h1{text-indent:500px;font-size:300%;color:#ff7200;}
+.row{margin-top:5%;display:flex;justify-content:space-between;}
+.course-col{flex-basis:31%;background:#fff3f3;border-radius:10px;margin-bottom:5%;padding:20px 12px;box-sizing:border-box;transition:0.5s;}
+.course-col h3{text-align:center;font-weight:600;margin:10px 0;color:green;}
+.course-col:hover{box-shadow:0 0 20px 0px rgba(0,0,0,0.2);}
+    
+ .campus {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+  .campus:hover {
+    background-color: #ff8080; /* Change background color on hover */
+  }
+  .campus img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire space */
+    border-radius: 8px;
+  }
+  .campus-name {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+/* Style for the comment container */    
+.comment{margin-bottom: 20px; margin-bottom: 20px;padding: 10px;border: 1px solid #ccc;border-radius:5px;overflow: hidden;}  
+/* Style for the commenter's name */
+.comment .commenter-name {font-weight: bold;}
+/* Style for the comment text */
+.comment .comment-text {margin-top: 5px;} 
+/* Style for the commenter's image */  
+.comment .commenter-img {width: 50px;height: 50px;border-radius: 50%;margin-right: 10px; float: left;}
+ 
+
+
+.commenter h1{text-indent:500px;font-size:300%;color:#ff7200;}
+.comment-box{padding:10px;overflow:hidden;}
+.comment-box .user{display:flex;width: min-content;}
+.comment-box textarea{background:#eee;height:152px;width:97%;margin:10px 0;padding:10px;border:none;border-radius:4px;box-shadow:0 0 0 0.5px #0003;}
+.comment-box textarea:focus{outline-color:#009cff;}
+.comment-box .comment-submit{float:right;padding:6px 14px;border:none;background:#009cff;color:#fff;cursor:pointer;border-radius:2px;}
+.comment-box .comment-submit:hover{background:#027ecc;}
+
+
+.header4{background-image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(n10.jpg);background-size:cover;background-position:center;width:100%;}
+.heading4{display:flex;justify-content:space-between;padding:30px;margin:0 auto;}
+.heading4 img{height:500px;border-radius:50px;width:100%;}
+.heading4 h1{color:#33ccff;font-size:200%;}
+.heading4 p{color:white;font-size:150%;padding:15px;font-family:'arial';}
+.heading4 span{color:orange;}
+
+
+/* Style the footer */
+footer { background-color: #333; color: white; padding: 20px;text-align: center;}
+
+/* Style the social media icons */
+.social-media {margin-top: 10px;}
+.social-media a {color: white;text-decoration: none; font-size:20px;  margin: 0 10px;}            
+
+
+
+</style>
+</head>
+<body>
+<label><b></b></label>
+<section class="header">
+<nav>
+<a href="SPORTS.html">SPORTS</a></li>
+<a href="ENTERTAINMENT.html">ENTERTAINMENT</a></li>
+<a href="POLITICS.html">POLITICS</a></li>
+<a href="ACADEMICS.html">ACADEMICS</a></li>
+<a class="active"href="HOME.html">HOME</a></li>
+</nav>
+<a href="home.html"><img src="infinite.png" width="150px" height="140px" ></a>
+
+
+<div class="content">
+<h1>Internet Technology &<br><span>Web design: Infinite University</span></h1>
+<p style="font-family:'arial';color:white;font-size:120%">INFINITE UNIVERSITY<br>
+<b>Infinite University is an innovative educational institution dedicated to<br>
+ providing lifelong learning opportunities for individuals across the globe.<br>
+ Founded on the principle that learning knows no boundaries.</b></p>
+</p><br>
+<a href="https://maps.app.goo.gl/uHbrk5GfVkpMHtZu7" class="hero-btn">Visit Us to know More</a>
+</section><br><br>
+
+<section class="header3">
+<div class="heading3">
+<div class="text">
+<h1>GROUP MEMBERS:</h1>
+<p>
+1.NAHUMUZA FAITH-VU-DIT-2307-0517-DAY
+<br>2.NAKUYA DOROTHY Kisakye-VU-BCS-2307-0306-DAY 
+<br>3.NABUKEERA ROSEMARY keeya-VU-BCS-2307-0996-DAY
+<br>4.NAMUYIGA CHRISTINE-VU-DIT-2307-0077-DAY
+<br>5.NAMARA CATHERINE-VU-DIT-2307-1115-DAY
+<br>6.NAHABWE EDWIN-VU-BIT-2307-0869-DAY
+<br>7.Akena Brian Fredrick-VU-BAV-2307-0463-DAY
+<br>8.Asiimwe Godwin-VU-BAV-2307-0159-DAY
+<br>9.Ntumba Rehema Agnes-VU-BAV-2307-0421-DAY
+<br>10.Kabanda Jovenal Jorome-VU-BIT-2307-0799-DAY
+</div>
+<img src="a5.jpg" alt="">
+</p>
+</div>
+</section>
+<br><br>
+<section class="campus-updates">
+<h1>~ CAMPUS UPDATES ~</h1><br>
+<div class="postcard">
+<h2>Academics</h2>
+<a href="ACADEMICS.html" class="zoom-link">  <img src="1.jpg" alt="Image 1"></a>
+<p>Explore the world of knowledge and learning. Dive into fascinating subjects and expand your horizons.</p>
+
+</div>
+
+<div class="postcard">
+<h2>Entertainment</h2>
+<a href="ENTERTAINMENT.html" class="zoom-link">  <img src="e4.jpg" alt="Image 2"></a>
+  <p>Experience the thrill of entertainment. From movies to music, immerse yourself in captivating stories and performances.</p>
+</div>
+
+<div class="postcard">
+ <h2>Sports</h2>
+<a href="SPORTS.html" class="zoom-link"><img src="s2.jpg" alt="Image 3"></a>
+<p>Feel the adrenaline rush of sports. Follow your favorite teams and athletes as they strive for victory and glory.</p>
+</div>
+</section>
+<br><br>
+<br><br>
+
+<section class="course">
+<!--course-->
+<h1>Courses we Offer</h1>
+<div class="row">
+<div class="course-col">
+<h3>Foundation</h3>
+<p>Foundation programme also known as the Higher Education Certificate is a programme tailored to help students coming from different education systems around the world to align their qualification to the Ugandan education system to become eligible for admission.</p>
+</div>
+<div class="course-col">
+<h3>Degree</h3>
+<p>As one of the most innovative academic institutions in Uganda, we’re renowned for our accredited programmes, quality education and student-centred way of doing business that transforms and inspires students to reach their full potential in employment, entrepreneurship, and ethical leadership.</p>
+</div>
+<div class="course-col">
+<h3>Post Graduate</h3>
+<p>Join our Postgraduate study and gain more comprehensive knowledge within a particular area of a discipline, to develop new interests or to start on a new career path..</p>
+</div>
+</div>
+</section>
+<br><br>
+
+
+<section class="campuses">
+<h1>Our Global Campuses</h1>
+
+<div class="campus" onclick="changeBackground('campus1')">
+<img src="c1.jpg" alt="Campus 1">
+<div class="campus-name">LONDON</div>
+</div>
+
+<div class="campus" onclick="changeBackground('campus2')">
+<img src="c2.jpg" alt="Campus 2">
+<div class="campus-name">SOUTH AFRICA</div>
+</div>
+
+<div class="campus" onclick="changeBackground('campus3')">
+<img src="c3.jpg" alt="Campus 3">
+<div class="campus-name">UGANDA</div>
+</div>
+
+<div class="campus" onclick="changeBackground('campus4')">
+<img src="c4.jpg" alt="Campus 4">
+<div class="campus-name">CANADA</div>
+</div>
+
+<script>
+  function changeBackground(campusName) {var campus = document.querySelector('.' + campusName);campus.style.backgroundColor = "#ff8080";} // Change background color on click   
+</script>
+</section>
+<br><br>
+
+<section class="commenter">
+<h1>Give Your view</h1>
+<!-- Comment 1 -->
+<div class="comment">
+<img src="c6.jpg" alt="Commenter 1" class="commenter-img">
+<div class="comment-details">
+<div class="commenter-name">John Doe</div>
+<div class="comment-text">
+       Infinite University offers a diverse range of courses that cater to my interests. The online platform is user-friendly,<br>
+ and the professors are knowledgeable and supportive. I'm grateful for the opportunity to learn and grow with such a vibrant community!  </div>
+</div>
+</div>
+
+<!-- Comment 2 -->
+<div class="comment">
+<img src="c4.jpg" alt="Commenter 2" class="commenter-img">
+<div class="comment-details">
+<div class="commenter-name">Jane Smith</div>
+ <div class="comment-text">
+      As a working professional, the flexibility of Infinite University's online courses is invaluable to me. <br>
+I can balance my work and studies seamlessly. The interactive nature of the classes keeps me engaged, and I appreciate the personalized feedback from instructors. </div>
+</div>
+</div>
+<br><br>
+
+<!-- Comment 3 -->
+<div class="comment">
+<img src="c5.jpg" alt="Commenter 3" class="commenter-img">
+<div class="comment-details">
+<div class="commenter-name">Alice Johnson</div>
+<div class="comment-text">
+Infinite University has exceeded my expectations in terms of quality and support. <br>
+The resources available, both academic and personal, have been instrumental in my growth. I've formed meaningful connections with fellow students and faculty members, making it a truly enriching experience.
+</div>
+</div>
+</div>
+<br>
+<form action="" class="comment-box">
+<div class="user">
+<div class="name">COMMENT</div>
+</div>
+<textarea name="comment" id=""row="10" cols="30"></textarea>
+<button class="comment-submit">submit comment</button>
+</form>
+<br><br>
+
+<section class="header4">
+<div class="heading4">
+<div class="text">
+<h1>About Us</h1>
+<p>At Infinite University, we believe in the boundless potential of education to transform lives and shape futures. Established in 1980,<br>
+ Infinite University has been dedicated to fostering excellence in learning, research, and innovation. Our commitment lies in providing a dynamic and inclusive environment where students,<br>
+ faculty, and staff can thrive intellectually and personally.<br><br>
+<b>Location:<br>
+Infinite University is located at:<br>
+123 University Avenue,<br>
+KAMPALA CITY, State<br>
+Market St, Kampala</b><br><br>
+<span>CLICK ON MAP FOR DIRECTIONS TO INFINITE UNIVERSITY:</sapn>
+</div>
+<a href="https://maps.app.goo.gl/uHbrk5GfVkpMHtZu7"><img src="locate.webp" alt="Map Location" style="max-width:200%;"></a>
+</p>
+</div>
+</section>
+
+
+
+<footer>
+<div>
+<h3>Connect with us:</h3>
+<!-- Social Media Icons -->
+<div class="social-media">
+<a href="https://wa.me/+256789000567" target="_blank"><img src="whatsapp.jpg" alt="Whatsapp" width="30" height="30"></a>
+<a href="https://www.facebook.com/VUKampala" target="_blank"><img src="ff.png" alt="Facebook" width="30" height="30"></a>
+<a href="https://www.instagram.com/victoriauniversity_kampala" target="_blank"><img src="inst.jpeg" alt="Instagram" width="30" height="30"></a>
+<a href="https://www.linkedin.com/company/linkedin-university" target="_blank"><img src="link.png" alt="LinkedIn" width="30" height="30"></a>
+</div>
+</div>
+<div>
+<h3>Contact Us:</h3>
+
+<!-- Contact Information -->
+<p>Email: info@infiniteuniversity.com</p>
+<p>Phone: <a href="https://wa.me/+256789000567" target="_blank">+256789000567</a></p>
+<p>Address: 123 University Avenue, Cityville, State,</p>
+</div>
+</footer>
+
+</body>
+
+</html>
+

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>News Website</title>
+<style>
+
+
+.header{height:60vh;width:100%;background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url(e1.jpg);background-position:center;background-size:cover;
+text-align:left;color:#fff;}
+.entertainment{margin-left:8%;font-family:'arial';line-height:1;font-size:300%}
+span{color:#33ccff;font-size:150%}
+
+.entertain{margin-left:0%;color:black;text-decoration:none;border-radius:5px;padding:10px 20px;background-color:#ff7200;
+transition:background-color 0.3s ease;box-shadow:0 0 5px yellow,0 0 25px yellow;}
+.entertain:hover{background-color:white;box-shadow:0 0 5px yellow,0 0 25px yellow,0 0 50px yellow;}
+
+
+.content span{color:#ff7200;font-size:90px;}
+h1{font-size:98px;line-height:1;font-style:italic;padding:0;margin:0;text-indent:300px;}
+p{margin:0;padding-bottom:16px;}
+
+.cols{position:relative;column-count:3;column-gap:32px;column-fill:balance;border:solid #e4e4e4;
+border-width:11px 0;padding:21px 0;text-align:justify;text-justify:inner-content;word-break:break-word;}
+.cols p:first-letter{float:left;font-size:72px;font-weight:bold;line-height:1;margin-right:14px}
+
+nav{background-color:rgba(0,0,0,0.5);overflow:hidden;}
+nav a{float:right;display:block;color:white;text-align:center;padding:15px 20px;text-decoration:none;}
+a.active,nav a:hover{background-color:#ff7200;color:black;}
+
+
+
+.gallery{height:60vh;width:100%;background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(n10.jpg);background-position:center;background-size:cover;}
+#slider{position:relative;width:30%;height:30vw;margin:50px auto;transform-style:preserve-3d;perspective:1400px;}
+#slider label,
+#slider label img{display:flex;position:absolute;top:0;left:0;align-items:center;justify-content:center;width:100%;height:100%;border-radius:3px;color:white;font-size:70px;font-weight:bold;
+cursor:pointer;transition:transform 400ms ease;}
+
+input[type="radio"]
+{position:relative;top:108%;left:50%;width:18px;height:18px;margin:0 15px 0 0;transform:translateX(-83px);cursor:pointer;opacity:0.4;}
+input[type="radio"]:nth-child(7){margin-right:0px;}
+input[type="radio"]:checked{opacity:1;}
+
+#s1:checked~#slide1,
+#s2:checked~#slide2,
+#s3:checked~#slide3,
+#s4:checked~#slide4,
+#s5:checked~#slide5{
+transform: translate3d(0%,0,0px);box-shadow:0 13px 26px rgba(0,0,0,0.3),0 12px 6px rgba(0,0,0,0.2);}
+
+
+
+#s1:checked~#slide2,
+#s2:checked~#slide3,
+#s3:checked~#slide4,
+#s4:checked~#slide5,
+#s5:checked~#slide1{
+transform: translate3d(50%,0,-200px);box-shadow:0 6px 10px rgba(0,0,0,0.3),0 2px 2px rgba(0,0,0,0.2);}
+
+#s1:checked~#slide5,
+#s2:checked~#slide1,
+#s3:checked~#slide2,
+#s4:checked~#slide3,
+#s5:checked~#slide4{
+transform:translate3d(-50%,0,-200px);box-shadow:0 6px 10px rgba(0,0,0,0.2),0 2px 2px rgba(0,0,0,0.2);}
+
+#s1:checked~#slide3,
+#s2:checked~#slide4,
+#s3:checked~#slide5,
+#s4:checked~#slide1,
+#s5:checked~#slide2{
+transform:translate3d(100%,0,-350px);box-shadow:0 1px 4px rgba(0,0,0,0.4);}
+
+#s1:checked~#slide4,
+#s2:checked~#slide5,
+#s3:checked~#slide1,
+#s4:checked~#slide2,
+#s5:checked~#slide3{
+transform:translate3d(-100%,0,-350px);box-shadow:0 1px 4px rgba(0,0,0,0.3);}
+
+
+.header3{background-image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url(n10.jpg);background-size:cover;background-position:center;width:100%;}
+.heading3{display:flex;justify-content:space-between;padding:40px;margin:0 auto;}
+.heading3 img{height:250px;border-radius:10px;}
+.heading3 h1{color:#33ccff;font-size:250%;}
+.heading3 p{color:#c0bdbd;font-size:150%;padding:15px;}
+
+
+.commenting{display:block;margin:0;padding:0;font-family:system-ui;font-size:16px;background:#f8fcfd;margin-top:50px;}
+.flex{display:flex;justify-content:space-between;width:100%;}
+img{width:15%;height:20%;border-radius:100%;}
+.comment-box,.comment-list{background:#fff;border-radius:4px;box-shadow:0 2px 2px #0002;}
+.comment-session{width:650px;height:auto;margin:0 auto;}
+.comment-list{width:100%;margin-bottom:12px;}
+.comment-list.user{display:flex;padding:10px;overflow:hidden;}
+.comment-list .name{text-transform:uppercase;font-weight:600;}
+.comment-list .day{font-size:12px;}
+.post-comment .comment{padding:5px 0 15px 58px;}
+.comment-box{padding:10px;overflow:hidden;}
+.comment-box .user{display:flex;width: min-content;}
+.comment-box textarea{background:#eee;height:152px;width:97%;margin:10px 0;padding:10px;border:none;border-radius:4px;box-shadow:0 0 0 0.5px #0003;}
+.comment-box textarea:focus{outline-color:#009cff;}
+.comment-box .comment-submit{float:right;padding:6px 14px;border:none;background:#009cff;color:#fff;cursor:pointer;border-radius:2px;}
+.comment-box .comment-submit:hover{background:#027ecc;}
+
+
+/* Style the footer */
+footer { background-color: #333; color: white; padding: 20px;text-align: center;}
+
+/* Style the social media icons */
+.social-media {margin-top: 10px;}
+.social-media a {color: white;text-decoration: none; font-size:20px;  margin: 0 10px;}            
+
+
+</style>
+</head>
+<body>
+<section class="header">
+<nav>
+<a href="SPORTS.html">SPORTS</a>
+<a class="active"href="ENTERTAINMENT.html">ENTERTAINMENT</a>
+<a href="POLITICS.html">POLITICS</a>
+<a href="ACADEMICS.html">ACADEMICS</a>
+<a href="HOME.html">HOME</a>
+</nav>
+</section><br>
+
+<div class="content">
+<h1><span>Campus </span>~Spotlight~</h1>
+</div><br>
+
+<div class="cols">
+<p><b>Infinite University Freshers' Ball: A Night of Boundless Beginnings:</b><br>
+The Infinite University Freshers’ Ball is not just an event; it’s a celebration of new beginnings, a vibrant tapestry of diverse talents, and an initiation into a community that values growth, exploration, and limitless possibilities. As freshmen step onto the threshold of their academic journey, this annual extravaganza marks their official induction into the vibrant tapestry of university life.
+<br><b>The Prelude to Infinite Adventures:</b>
+Held in the heart of the university campus, the Freshers’ Ball is a spectacle that ignites excitement and anticipation. It’s an evening where the air is charged with the palpable energy of new connections waiting to be made, dreams yearning to be chased, and friendships destined to blossom.
+Months of meticulous planning culminate in an enchanting setting: fairy lights twinkling like stars, the rhythm of music weaving through the air, and an ambiance that promises an unforgettable night. For freshmen, it’s not merely an event—it’s a rite of passage, a gateway to forging bonds that will endure throughout their academic odyssey.
+<br><b>A Symphony of Diversity:</b>
+What sets the Infinite University Freshers’ Ball apart is its celebration of diversity. Here, differences dissolve, and individuality shines. Students from every corner of the globe, representing myriad cultures, backgrounds, and experiences, converge under one roof to revel in the spirit of unity.
+The ball is a kaleidoscope of traditions, fashion, and cuisine—a melting pot where each element contributes to the vibrant mosaic of the university community. Whether it’s the rhythmic beats of traditional dances, the colorful attire that reflects cultural heritage, or the aroma of global cuisines wafting through the air, diversity is not just celebrated; it’s embraced, cherished, and woven into the very fabric of the event.
+<br><b>An Ode to Talent and Creativity:</b>
+Central to the Freshers’ Ball is the showcase of talent and creativity. From live performances that captivate the audience to art installations that evoke introspection, the event is a canvas upon which students paint their aspirations, passions, and dreams.
+Musicians strumming guitars, poets reciting verses, dancers gliding across the floor—the stage becomes a sanctuary where expression knows no bounds. It’s a platform for budding artists to shine, for voices to be heard, and for talents to be applauded. Every act, every stroke of the brush, every note played is a testament to the rich tapestry of creativity that defines the university community.
+<br><b>A Nexus of Friendships:</b>
+Amidst the dazzle and glamour, the Freshers’ Ball is, at its core, about forging connections. It’s where strangers become friends, where bonds are formed over shared laughter, shared dreams, and shared experiences. For freshmen, it’s an opportunity to step out of their comfort zones, to extend a hand in friendship, and to embrace the diverse tapestry of personalities that make up their new community.
+As conversations flow and barriers dissolve, the ball becomes a nexus of friendships that transcend boundaries. Whether it’s swapping stories over a cup of punch, dancing the night away, or simply exchanging smiles across the room, the Freshers’ Ball lays the foundation for lifelong connections that will accompany students throughout their academic and personal journeys.
+<br><b>A Promise of Infinite Possibilities:</b>
+As the night draws to a close, and the echoes of laughter and music linger in the air, the Infinite University Freshers’ Ball leaves an indelible imprint on the hearts and minds of all who attended. It’s more than just a celebration; it’s a promise—a promise of infinite possibilities, of transformative experiences, and of a journey filled with discovery and growth.
+For freshmen, it’s the beginning of an odyssey—a chapter in their lives brimming with potential and promise. And as they bid farewell to the ball, they carry with them not just memories, but a sense of belonging, a network of support, and the unwavering belief that within the infinite expanse of university life, their dreams are within reach.
+
+
+
+</p></div><br>
+<h1>Slide Through Happiness</h1>
+<section class="gallery">
+<div id="slider">
+<input type="radio" name="slider" id="s1" checked/>
+<input type="radio" name="slider" id="s2"/>
+<input type="radio" name="slider" id="s3"/>
+<input type="radio" name="slider" id="s4"/>
+<input type="radio" name="slider" id="s5"/>
+
+<label for="s1" id="slide1">
+<img src="11.jpg"alt/>
+</label>
+<label for="s2" id="slide2">
+<img src="e4.jpg"alt/>
+</label>
+<label for="s3" id="slide3">
+<img src="3.jpg"alt/>
+</label>
+<label for="s4" id="slide4">
+<img src="44.jpg"alt/>
+</label>
+<label for="s5" id="slide5">
+<img src="5.jpg"alt/>
+</label>
+</div>
+</section>
+<br><br><br><br>
+<hr/><br>
+
+<section class="header3">
+<div class="heading3">
+<div class="text">
+<h1>Latest News:<br>Cindy and Sheebah musical battle</h1>
+<p>As the Cindy and Sheebah musical battle draws closer, we have reliably learnt that the whole idea was birthed by Swangz Avenue as early as January. It is said
+the record label engaged both parties about this idea and offered shs200 million for the two artistes. The show was meant to take place in october. When Sheebah prematurely announced
+a festival that later turned out to be a battle, with Infinite University in the mix, the industrial area-based label is said to have abandoned the idea, feeling shortchanged.</p>
+</div>
+<img src="e3.webp" alt=""/>
+</p>
+</div>
+</section><br><a class="entertain"href="https://youtu.be/cDAFX2WxEg8">WATCH MORE</a>
+<br><br>
+
+<section class="header3">
+<div class="heading3">
+<div class="text">
+<h1>Infinite University Freshers' Ball:<br> A Night of Boundless Beginnings& Prelude to Infinite Adventures</h1>
+<p>The Infinite University Freshers’ Ball is not just an event; it’s a celebration of new beginnings, a vibrant tapestry of diverse talents, and an initiation into a community that values growth, exploration, and limitless possibilities. As freshmen step onto the threshold of their academic journey, this annual extravaganza marks their official induction into the vibrant tapestry of university life.
+It’s an evening where the air is charged with the palpable energy of new connections waiting to be made, dreams yearning to be chased, and friendships destined to blossom.</p>
+</div>
+<img src="e4.jpg" alt=""/>
+</p>
+</div>
+</section><br>
+
+<section class="header3">
+<div class="heading3">
+<div class="text">
+<h1>A Symphony of Diversity:<br>Cultural Gala</h1>
+<p>What sets the Infinite University Cultural Gala apart is its celebration of diversity. Here, differences dissolve, and individuality shines. Students from every corner of the globe, representing myriad cultures, backgrounds, and experiences, converge under one roof to revel in the spirit of unity.
+The ball is a kaleidoscope of traditions, fashion, and cuisine—a melting pot where each element contributes to the vibrant mosaic of the university community. Whether it’s the rhythmic beats of traditional dances, the colorful attire that reflects cultural heritage, or the aroma of global cuisines wafting through the air, diversity is not just celebrated; 
+it’s embraced, cherished, and woven into the very fabric of the event.</p>
+</div>
+<img src="e5.jpg" alt=""/>
+</p>
+</div>
+</section><br><a class="entertain"href="https://youtu.be/hwdZQc00Azc">WATCH MORE</a>
+<br><br>
+
+<section class="header3">
+<div class="heading3">
+<div class="text">
+<h1>A Nexus of Friendships:<br>End of Year Dinner</h1>
+<p>As the night unfolds and memories are made, the End-of-year dinner serves as a reminder that while one chapter may be ending, another is about to begin. It's a time to cherish the friendships forged, the lessons learned, and the experiences that have shaped the semester.
+
+But more than that, it's a moment to look ahead with hope and optimism—to embrace the challenges and opportunities that the future holds. As students dance beneath the stars, surrounded by laughter and camaraderie, they are reminded that no matter what lies ahead, they are part of a community that will support, inspire, and uplift them every step of the way.</p>
+</div>
+<img src="e6.jpg" alt=""/>
+</p>
+</div>
+</section><br>
+
+<section class="header3">
+<div class="heading3">
+<div class="text">
+<h1> Farewell to Stress:<br>Movie night</h1>
+<p>Held on the eve of the semester's conclusion, a beacon of light at the end of the academic tunnel. The campus transforms into a festive haven, with colorful decorations adorning every corner, music filling the air, and an atmosphere brimming with excitement and anticipation.
+For students, it's a chance to cast off the weight of academic responsibilities and immerse themselves in a night of unbridled revelry. Gone are the textbooks and lecture notes replaced instead by laughter, dancing, and the promise of carefree moments shared with friends old and new.</p>
+</div>
+<img src="e8.jpg" alt=""/>
+</p>
+</div>
+</section><br><br>
+
+<section class="commenting">
+<div class="comment-session">
+<div class="post-comment">
+<div class="comment-list">
+<div class="flex">
+<div class="user">
+<div class="user-image"><img src="e7.jpg" alt=""></div>
+<div class="user-meta">
+<div class="name">Radikapriya</div>
+<div class="day">10 hours ago</div>
+<div class="comment">Thanks,this article has been very infomative,we are tuned for more updates.</div>
+</div>
+</div>
+</div><br>
+
+<div class="comment-list">
+<div class="flex">
+<div class="user">
+<div class="user-image"><img src="w4.jpg" alt=""></div>
+<div class="user-meta">
+<div class="name">Jacksonmilly</div>
+<div class="day">8 hours ago</div>
+</div>
+</div>
+</div>
+
+<br><div class="comment">Thank you for this article. I have learned alot of democratic policies.</div>
+</div>
+</div>
+
+<form action="" class="comment-box">
+<div class="user">
+<div class="name">COMMENT</div>
+</div>
+<textarea name="comment" id=""row="10" cols="30"></textarea>
+<button class="comment-submit">submit comment</button>
+</form>
+</div>
+</div>
+</section>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<footer>
+<div>
+<h3>Connect with us:</h3>
+<!-- Social Media Icons -->
+<div class="social-media">
+<a href="https://wa.me/+256789000567" target="_blank"><img src="whatsapp.jpg" alt="Whatsapp" width="30" height="30"></a>
+<a href="https://www.facebook.com/VUKampala" target="_blank"><img src="ff.png" alt="Facebook" width="30" height="30"></a>
+<a href="https://www.instagram.com/victoriauniversity_kampala" target="_blank"><img src="inst.jpeg" alt="Instagram" width="30" height="30"></a>
+<a href="https://www.linkedin.com/company/linkedin-university" target="_blank"><img src="link.png" alt="LinkedIn" width="30" height="30"></a>
+</div>
+</div>
+<div>
+<h3>Contact Us:</h3>
+
+<!-- Contact Information -->
+<p>Email: info@infiniteuniversity.com</p>
+<p>Phone: <a href="https://wa.me/+256789000567" target="_blank">+256789000567</a></p>
+<p>Address: 123 University Avenue, Cityville, State,</p>
+</div>
+</footer>
+
+
+
+
+</body>
+</html>
+
+
